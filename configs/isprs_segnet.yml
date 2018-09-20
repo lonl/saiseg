@@ -1,0 +1,24 @@
+model:
+    arch: segnet
+data:
+    dataset: isprs
+    path: /mnt/a409/users/hanpengcheng/DataSets/aerial_segmentation/
+training:
+    window_size: [256, 256] # Patch size
+    stride: 32              # Stride for testing
+    in_channels: 3          # Number of input channels (e.g. RGB)
+    batch_size: 10          # Number of samples in a mini-batch
+    labels: ["roads", "buildings", "low veg.", "trees", "cars", "clutter"] # Label names
+    cache: True             # Store the dataset in-memory
+    base_lr: 0.01
+    device_ids: [0]
+    save_epoch: 1
+    epochs: 50
+    seeds: 1337
+    loss:
+        name: 'cross_entropy_ori'
+    optimizer:
+        name: 'sgd'
+        lr: 0.01
+        weight_decay: 0.0005
+        momentum: 0.9
