@@ -23,9 +23,9 @@
 2. To add other datasets implemented
 
 ### requirements
-* numpy==1.12.1
-* scipy==0.19.0
-* pytorch >=0.4.0
+* numpy
+* scipy
+* pytorch >=0.3.1
 * torchvision ==0.2.0
 * sklearn
 
